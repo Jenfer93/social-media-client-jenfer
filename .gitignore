@@ -3,3 +3,4 @@
 /.eslintcache
 /cypress/screenshots
 /cypress/videos
+/.env
