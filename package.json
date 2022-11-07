@@ -10,7 +10,8 @@
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
     "prepare": "husky install",
-    "test-unit": "jest"
+    "test-unit": "jest",
+    "test": "npm run test-unit"
   },
   "keywords": [],
   "author": "",
