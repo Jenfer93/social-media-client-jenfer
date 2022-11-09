@@ -34,3 +34,11 @@ npm run dev
 ```
 
 Follow the link to view the site
+
+name: "Jenny1234",
+email: "jennytesting@noroff.no",
+password: "Mypassword"
+banner: null,
+avatar: "https://picsum.photos/id/2/367/267",
+accessToken: "eyJhbGciOiJIUzI1NiIsInR5c....",
+};

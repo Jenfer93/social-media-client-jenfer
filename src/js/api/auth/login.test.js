@@ -2,11 +2,11 @@
 
 import { login } from "./login";
 
-const ex_email = "tester@noroff.no";
+const ex_email = "testersen@noroff.no";
 const ex_password = "Mypassword";
 const test_response = {
-  name: "Tester",
-  email: "tester@noroff.no",
+  name: "Tester12345",
+  email: "testersen@noroff.no",
   banner: null,
   avatar: "https://picsum.photos/id/2/367/267",
   accessToken: "eyJhbGciOiJIUzI1NiIsInR5c....",
