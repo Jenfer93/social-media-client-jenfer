@@ -15,6 +15,17 @@
         "no-unused-vars": "off",
         "no-undef": "off"
       }
+    },
+    {
+      "files": ["**/*.test.js"],
+      "env": { "jest/globals": true },
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "rules": {
+        "jest/prefer-expect-assertions": "off",
+        "no-undef": "off",
+        "no-unused-vars": "off"
+      }
     }
   ],
   "parserOptions": {
