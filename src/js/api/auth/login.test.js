@@ -66,16 +66,14 @@ function fetchInvalidLogin() {
 }
 
 /**
- * It either return a valid response object and store token in local storge or it throws error message
+ * It either return a valid response object and store token in local storage or it throws error message
  */
 describe("login", () => {
   it("Returns a valid access token in local storage and valid response object", async () => {
     global.fetch = jest.fn(() => fetchSuccess());
-    //login removes the accessToken from test object
     const expectedToken = test_response.accessToken;
     const response = await login(ex_email, ex_password);
-    const storedToken = JSON.parse(localStorage.getItem("token"));
-    expect(storedToken).toEqual(expectedToken);
+    expect(JSON.parse(localStorage.getItem("token"))).toEqual(expectedToken);
     expect(response).toEqual(test_response);
   });
   it("Throws error message on invalid login", async () => {
