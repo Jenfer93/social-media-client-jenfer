@@ -1,3 +1,5 @@
+//This file both checks the fetch function and if it can store tokens in localstorage
+
 import { login } from "./login";
 
 const ex_email = "tester@noroff.no";
@@ -56,6 +58,9 @@ function fetchSuccess() {
  * A mock fetch function that fetches unsuccessfully
  */
 
+/**
+ * A mock function that stores the token in localstorage
+ */
 describe("login", () => {
   it("Returns a valid access token in local storage and valid response object", async () => {
     global.fetch = jest.fn(() => fetchSuccess());
