@@ -19,8 +19,13 @@
     "test-e2e-cli": "cypress run"
   },
   "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jenfer93/social-media-client-jenfer.git"
+  },
+  "author": "Jenny Feragen",
   "license": "ISC",
+  "homepage": "https://github.com/Jenfer93/social-media-client-jenfer#readme",
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
