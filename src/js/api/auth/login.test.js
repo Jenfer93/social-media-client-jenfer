@@ -57,9 +57,16 @@ function fetchSuccess() {
 /**
  * A mock fetch function that fetches unsuccessfully
  */
+function fetchInvalidLogin() {
+  return Promise.resolve({
+    ok: false,
+    status: 401,
+    statusText: "Unauthorized",
+  });
+}
 
 /**
- * A mock function that stores the token in localstorage
+ * It either return a valid response object and store token in local storge or it throws error message
  */
 describe("login", () => {
   it("Returns a valid access token in local storage and valid response object", async () => {
@@ -70,5 +77,9 @@ describe("login", () => {
     const storedToken = JSON.parse(localStorage.getItem("token"));
     expect(storedToken).toEqual(expectedToken);
     expect(response).toEqual(test_response);
+  });
+  it("Throws error message on invalid login", async () => {
+    global.fetch = jest.fn(() => fetchInvalidLogin());
+    await expect(login(ex_email, ex_password)).rejects.toThrow("Unauthorized");
   });
 });

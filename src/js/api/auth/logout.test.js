@@ -42,7 +42,7 @@ global.localStorage = new LocalStorageMock();
  * A mock function that removes the token from localstorage and logs the user out
  */
 describe("logout", () => {
-  it("Returns a valid token and response object", () => {
+  it("Returns a valid token and removes from Localstorage", () => {
     localStorage.setItem("profile", JSON.stringify(ex_profile));
     localStorage.setItem("token", JSON.stringify(ex_access_token));
     logout();
