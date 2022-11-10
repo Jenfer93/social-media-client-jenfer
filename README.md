@@ -35,10 +35,34 @@ npm run dev
 
 Follow the link to view the site
 
-name: "Jenny1234",
-email: "jennytesting@noroff.no",
-password: "Mypassword"
-banner: null,
-avatar: "https://picsum.photos/id/2/367/267",
-accessToken: "eyJhbGciOiJIUzI1NiIsInR5c....",
-};
+## Tests
+
+I have set up some unit tests and they are:
+
+- Login test
+- Logout test
+- Create post test
+
+To run these tests use the command:
+
+```
+npm run test-unit
+```
+
+The End to End tests I have set up is:
+
+- Login test with valid credentials
+- Logout test
+- Create post
+
+To test these in Cypress use the command:
+
+```
+npm run test-e2e
+```
+
+To run these tests in the terminal use the command:
+
+```
+npm run test-e2e-cli
+```
