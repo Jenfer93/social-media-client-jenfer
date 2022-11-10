@@ -1,4 +1,4 @@
-const baseURL = "http://127.0.0.1:5500/";
+const baseURL = "http://127.0.0.1:8080/";
 
 describe("Authenticated user login", () => {
   beforeEach(() => {
