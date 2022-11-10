@@ -1,3 +1,6 @@
+[![Automated E2E Testing](https://github.com/Jenfer93/social-media-client-jenfer/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Jenfer93/social-media-client-jenfer/actions/workflows/e2e-test.yml)
+[![Automated Unit Testing](https://github.com/Jenfer93/social-media-client-jenfer/actions/workflows/unittest.yml/badge.svg)](https://github.com/Jenfer93/social-media-client-jenfer/actions/workflows/unittest.yml)
+
 # Workflow CA - Jenny Feragen
 
 In this CA we are learning how to set up tests for a application - to help us better the process of coding.
