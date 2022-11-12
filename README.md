@@ -1,5 +1,6 @@
 [![Automated E2E Testing](https://github.com/Jenfer93/social-media-client-jenfer/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Jenfer93/social-media-client-jenfer/actions/workflows/e2e-test.yml)
 [![Automated Unit Testing](https://github.com/Jenfer93/social-media-client-jenfer/actions/workflows/unittest.yml/badge.svg)](https://github.com/Jenfer93/social-media-client-jenfer/actions/workflows/unittest.yml)
+[![Deploy static content to Pages](https://github.com/Jenfer93/social-media-client-jenfer/actions/workflows/pages.yml/badge.svg)](https://github.com/Jenfer93/social-media-client-jenfer/actions/workflows/pages.yml)
 
 # Workflow CA - Jenny Feragen
 
