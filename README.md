@@ -158,3 +158,152 @@ There should also be a .vscode folder containing a file called settings.json, ad
   "eslint.validate": ["javascript"]
 }
 ```
+
+## Unit testing
+
+For the unit-testing I've used Jest
+To set this up I did the following:
+
+Install Jest.
+
+```
+npm i -D jest@29.2.0
+```
+
+Add the Jest script to `package.json`
+
+```json
+scripts{
+    "format": "prettier -w src/**/*.js",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "test-unit": "npm run test",
+    "test": "jest",
+}
+```
+
+To have eslint work correctly with jest I've installed eslint plugin for Jest.
+
+```
+npm i -D eslint-plugin-jest
+```
+
+Update `.eslintrc.json` settings.
+
+```json
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "eslint:recommended",
+  "overrides": [
+    {
+      "files": ["**/*.test.js"],
+      "env": { "jest": true },
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "rules": {
+        "jest/prefer-expect-assertions": "off",
+        "no-undef": "off",
+        "no-unused-vars": "off"
+      }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {}
+}
+```
+
+We should also install Babel:
+
+```
+npm -D install @babel/core@7.19.3 @babel/preset-env@7.19.4
+```
+
+Then create a ´babel.config.json´ file and add the following:
+
+```json
+{
+  "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
+}
+```
+
+I then added the pre-commit hook for Jest in the folder `.husky` and file `pre-commit`:
+
+```
+npm run test-unit
+```
+
+## End 2 End testing
+
+For the e2e tests we're using Cypress
+
+Install Cypress
+
+```
+npm i -D cypress@10.7.0
+```
+
+We need to update the scripts to include Cypress, it will look like this:
+
+```json
+scripts{
+    "format": "prettier -w src/**/*.js",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "test-unit": "npm run test & npm run test-e2e",
+    "test": "jest",
+    "test-e2e": "cypress open",
+    "test-e2e-cli": "cypress run"
+}
+```
+
+Open Cypress by using the command
+
+```
+npm run test-e2e
+```
+
+WHen the Cypress window opens, choose the E2E Testing option, accept configurations and select Electron to get to the testing stage.
+After doing this there should have been added a folder for Cypress to you repo.
+And a file called `cypress.config.js`
+In the folder there might be some example files, these can be deleted and replaced with your own test files.
+
+We also need to add the Eslint plugin for Cypress:
+
+```
+npm i -D eslint-plugin-cypress@2.12.1
+```
+
+Update the eslint override settings in the `.eslintrc.json` file to look like this:
+
+```json
+ "overrides": [
+    {
+      "files": ["**/*.cy.js", "cypress.config.js"],
+      "env": { "cypress/globals": true },
+      "plugins": ["cypress"],
+      "extends": ["plugin:cypress/recommended"],
+      "rules": {
+        "cypress/no-unnecessary-waiting": "off",
+        "no-unused-vars": "off",
+        "no-undef": "off"
+      }
+    },
+    {
+      "files": ["**/*.test.js"],
+      "env": { "jest/globals": true },
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "rules": {
+        "jest/prefer-expect-assertions": "off",
+        "no-undef": "off",
+        "no-unused-vars": "off"
+      }
+    }
+  ],
+```
